@@ -2,27 +2,21 @@
 
 class Card
 {
-    private string $suit;
+    private Suit $suit;
     private int $value;
 
-    public function __construct(string $suit, int $value) {
+    public function __construct(Suit $suit, int $value) {
         $this->setSuit($suit);
         $this->setValue($value);
     }
 
-    public function getSuit(): string
+    public function getSuit(): Suit
     {
         return $this->suit;
     }
 
-    public function setSuit(string $suit): void
+    private function setSuit(Suit $suit): void
     {
-        $allowedSuits = ['heart', 'clover', 'diamond', 'spade'];
-
-        if (!in_array($suit, $allowedSuits)) {
-            die('Ongeldige kaart');
-        }
-
         $this->suit = $suit;
     }
 
@@ -39,16 +33,4 @@ class Card
 
         $this->value = $value;
     }
-
-
 }
-
-$card = new Card();
-$card->setSuit('heart');
-echo $card->getSuit();
-
-echo PHP_EOL;
-
-$card2 = new Card();
-$card2->setSuit('clover');
-echo $card2->getSuit();
