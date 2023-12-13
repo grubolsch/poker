@@ -15,11 +15,11 @@ class Deck {
 
     public function shuffle(): void
     {
-
+        shuffle($this->cards);
     }
 
     public function draw() : Card
     {
-
+        return array_pop($this->cards);
     }
 }
