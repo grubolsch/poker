@@ -30,14 +30,15 @@ class Player
         $this->balance = $balance;
     }
 
+    /** @return Card[] */
     public function getCards(): array
     {
         return $this->cards;
     }
 
-    public function setCards(array $cards): void
+    public function addCard(Card $card): void
     {
-        $this->cards = $cards;
+        $this->cards[] = $card;
     }
 
     public function getRole(): Role

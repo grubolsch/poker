@@ -25,7 +25,7 @@ class Card
         return $this->value;
     }
 
-    public function setValue(int $value): void
+    private function setValue(int $value): void
     {
         if ($value > 14 || $value <= 1) { //alle waardes boven de 14, en gelijk of onder de 1
             die('Ongeldige waarde van kaart');
